@@ -1,0 +1,30 @@
+.Meter-Container {
+    padding: 5% 10%;
+}
+
+.Meter {
+    position: absolute;
+    color: black;
+    background-color: #aaaaaa;
+    border: solid white;
+    border-width: 5%;
+    text-align: center;
+    font-size: xx-large;
+    user-select: none;
+    padding: 0% 1%;
+}
+
+.Spacer-Top {
+    font-weight: bold;
+    padding-bottom: 50%;
+}
+
+.Spacer-Middle {
+    font-weight: bold;
+    padding: 50% 0%;
+}
+
+.Spacer-Bottom {
+    font-weight: bold;
+    padding-top: 50%;
+}

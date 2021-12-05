@@ -1,0 +1,21 @@
+button {
+  width: 100px;
+  height: 60px;
+  cursor: pointer;
+  font-size: large;
+}
+
+button:disabled,
+button[disabled]{
+  background-color: dodgerblue;
+  color: white;
+  cursor: not-allowed;
+}
+
+.Button-Pad {
+  padding: 1%;
+}
+
+.Button-Space {
+  padding-bottom: 15%;
+}
