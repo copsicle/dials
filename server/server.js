@@ -18,31 +18,46 @@ var temp = {
 }
 
 const server = http.createServer((req, res) => {
-  if (req.method === 'GET' && (req.url === '' || req.url === '/')) {
-    fs.readFile(__dirname + '/index.html', function (err,data) {
-        if (err) {
-          res.writeHead(404);
-          res.end(JSON.stringify(err));
-          return;
-        }
-        res.writeHead(200);
-        res.end(data);
-      });
-  } else if (req.method === 'GET' && req.url.startsWith('/static')) {
-    fs.readFile(__dirname + req.url, function (err,data) {
-        if (err) {
-          res.writeHead(404);
-          res.end(JSON.stringify(err));
-          return;
-        }
-        res.writeHead(200);
-        res.end(data);
-      });
-  } else if (req.method === 'GET' && req.url === '/api/data') {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(dials));
-  } else {
+  // Return index for root request
+  if (req.method === 'GET')
+  {
+    if (req.url === '' || req.url === '/') {
+      fs.readFile(__dirname + '/index.html', function (err,data) {
+          if (err) {
+            res.writeHead(404);
+            res.end(JSON.stringify(err));
+            return;
+          }
+          res.writeHead(200);
+          res.end(data);
+        });
+    } 
+    // Serve static files
+    else if (req.url.startsWith('/static/')) {
+      fs.readFile(__dirname + req.url, function (err,data) {
+          if (err) {
+            res.writeHead(404);
+            res.end(JSON.stringify(err));
+            return;
+          }
+          res.writeHead(200);
+          res.end(data);
+        });
+    } 
+    // Serve dial values as JSON
+    else if (req.url === '/api/data') {
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(dials));
+    }
+    // Handle unknown requests
+    else {
+      res.writeHead(404);
+      res.end('Not found');
+    }
+  }
+  // Handle unknown requests
+  else {
     res.writeHead(404);
     res.end('Not found');
   }
@@ -100,7 +115,7 @@ const readinput = {
     console.log("Press any key");
     await keypress();
     console.log(">Sending Data")
-    dials = temp;
+    Object.assign(dials, temp);
     return readinput.alt();
   }
 }

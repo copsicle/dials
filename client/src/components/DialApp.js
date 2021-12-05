@@ -6,8 +6,6 @@ import Navbar from './Navbar';
 import AltitudeBar from './AltitudeBar';
 import './DialApp.css';
 
-var assert = require('assert');
-
 class DialApp extends React.Component {
     constructor(props) {
         super(props);
@@ -24,6 +22,7 @@ class DialApp extends React.Component {
             // Boolean for switching between visual and text mode (true - visual mode)
             visual: true,
         };
+        this.getDialData = this.getDialData.bind(this);
     }
 
     changeVisualState(event) {
@@ -34,13 +33,15 @@ class DialApp extends React.Component {
     getDialData() {
         // Get JSON of dial values from the server and parse into the dials state
         fetch(window.location.href + 'api/data', {method: 'GET'}).then((response) => response.json()).then((data) => {
-            this.setState({dials: data});
+            this.setState({dials: Object.assign({}, data)});
         }).catch(error => {
             console.log(error.message);
         })
     }
     
     componentDidMount() {
+        // Get initial data
+        this.getDialData();
         // Set tick rate to 1 second
         this.interval = setInterval(() => this.tick(), 1000);
     }
@@ -76,7 +77,5 @@ class DialApp extends React.Component {
         }
     }
 }
-
-DialApp.propTypes = {};
 
 export default DialApp;

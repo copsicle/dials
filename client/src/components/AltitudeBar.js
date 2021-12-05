@@ -5,14 +5,14 @@ import './AltitudeBar.css';
 class AltitudeBar extends React.Component {
     // Meter - The container with the number values
     // Bar - The black rectangle which indicates the value
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
+    static propTypes = {
+        alt: PropTypes.number,
+    };
     // Style for moving the bar in the meter by altitude value
     barStyle = {
         position: 'absolute',
         backgroundColor: 'black',
+        opacity: "0.8",
         width: '150%',
         height: '3%',
         left: '-25%',
@@ -34,9 +34,5 @@ class AltitudeBar extends React.Component {
         );
     }
 }
-
-AltitudeBar.propTypes = {
-    alt: PropTypes.number,
-};
 
 export default AltitudeBar;
