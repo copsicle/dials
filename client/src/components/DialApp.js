@@ -5,6 +5,7 @@ import TextView from './TextView';
 import Navbar from './Navbar';
 import AltitudeBar from './AltitudeBar';
 import Compass from './Compass';
+import HorizonAngle from './HorizonAngle';
 import './DialApp.css';
 
 class DialApp extends React.Component {
@@ -18,7 +19,7 @@ class DialApp extends React.Component {
                 // Rotation (between 0 - 360)
                 his: 123,
                 // Horizon Angle (between -100 - 100)
-                adi: 3,
+                adi: -100,
             },
             // Boolean for switching between visual and text mode (true - visual mode)
             visual: true,
@@ -66,6 +67,7 @@ class DialApp extends React.Component {
                     <Navbar visual={this.state.visual} click={this.changeVisualState.bind(this)} />
                     <AltitudeBar alt={this.state.dials.alt}/>
                     <Compass his={this.state.dials.his}/>
+                    <HorizonAngle adi={this.state.dials.adi}/>
                 </div>
             );
         } else {
