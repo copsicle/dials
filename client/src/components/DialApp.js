@@ -4,6 +4,7 @@ import React from 'react';
 import TextView from './TextView';
 import Navbar from './Navbar';
 import AltitudeBar from './AltitudeBar';
+import Compass from './Compass';
 import './DialApp.css';
 
 class DialApp extends React.Component {
@@ -15,7 +16,7 @@ class DialApp extends React.Component {
                 // Altitude (between 0 - 3000)
                 alt: 1500,
                 // Rotation (between 0 - 360)
-                his: 2,
+                his: 123,
                 // Horizon Angle (between -100 - 100)
                 adi: 3,
             },
@@ -64,6 +65,7 @@ class DialApp extends React.Component {
                 <div className="Box">
                     <Navbar visual={this.state.visual} click={this.changeVisualState.bind(this)} />
                     <AltitudeBar alt={this.state.dials.alt}/>
+                    <Compass his={this.state.dials.his}/>
                 </div>
             );
         } else {

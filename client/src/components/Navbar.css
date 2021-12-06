@@ -1,8 +1,15 @@
+.Button-Container {
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  align-items: center;
+  justify-content: center;
+}
+
 button {
-  width: 100px;
-  height: 60px;
+  width: 10vw; height: 5vw;
   cursor: pointer;
-  font-size: large;
+  font-size: 2.5vw;
 }
 
 button:disabled,
@@ -10,12 +17,4 @@ button[disabled]{
   background-color: dodgerblue;
   color: white;
   cursor: not-allowed;
-}
-
-.Button-Pad {
-  padding: 1%;
-}
-
-.Button-Space {
-  padding-bottom: 15%;
 }

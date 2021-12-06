@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './AltitudeBar.css';
 
-class AltitudeBar extends React.Component {
+export default class AltitudeBar extends React.Component {
     // Meter - The container with the number values
     // Bar - The black rectangle which indicates the value
     static propTypes = {
@@ -35,4 +35,4 @@ class AltitudeBar extends React.Component {
     }
 }
 
-export default AltitudeBar;
+//export default AltitudeBar;

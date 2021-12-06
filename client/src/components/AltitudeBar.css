@@ -1,5 +1,8 @@
 .Meter-Container {
-    padding: 5% 10%;
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .Meter {
@@ -7,11 +10,11 @@
     color: black;
     background-color: #aaaaaa;
     border: solid white;
-    border-width: 5%;
+    border-width: 0.25vw;
     text-align: center;
-    font-size: xx-large;
+    font-size: 2vw;
     user-select: none;
-    padding: 0% 1%;
+    padding: 0vw 0.5vw;
 }
 
 .Spacer-Top {

@@ -12,8 +12,8 @@ class Navbar extends React.Component {
         if (this.props.visual){
             // If in visual mode highlight and disable the visual button
             return (
-                <div className="Button-Pad">
-                    <div className="Button-Space">
+                <div className="Button-Container">
+                    <div>
                         <button disabled={true}>Visual</button>
                     </div>
                     <div>
@@ -25,8 +25,8 @@ class Navbar extends React.Component {
         else {
             // Otherwise highlight and disable the text button
             return (
-                <div className="Button-Pad">
-                    <div className="Button-Space">
+                <div className="Button-Container">
+                    <div>
                         <button onClick={this.props.click}>Visual</button>
                     </div>
                     <div>

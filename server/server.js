@@ -19,8 +19,7 @@ var temp = {
 
 const server = http.createServer((req, res) => {
   // Return index for root request
-  if (req.method === 'GET')
-  {
+  if (req.method === 'GET') {
     if (req.url === '' || req.url === '/') {
       fs.readFile(__dirname + '/index.html', function (err,data) {
           if (err) {

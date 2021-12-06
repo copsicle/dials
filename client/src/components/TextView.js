@@ -2,28 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class TextView extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
+    static propTypes = {
+        dials: PropTypes.object,
+    };
 
     render() {
         return (
-            <>
-
-                Altitude: {this.props.dials.alt}
-                
-                HIS: {this.props.dials.his}
-                
-                ADI: {this.props.dials.adi}
-
-            </>
+            <div>
+                <div>Altitude: {this.props.dials.alt}</div>
+                <div>HIS: {this.props.dials.his}</div>
+                <div>ADI: {this.props.dials.adi}</div>
+            </div>
         );
     }
 }
-
-TextView.propTypes = {
-    dials: PropTypes.object,
-};
 
 export default TextView;
