@@ -2,5 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 35vw;
+    width: 32.5vw;
+}
+
+.Horizon {
+    width: 25vw; height: 25vw;
+    border-radius: 50%;
+    border: solid white;
+    border-width: 0.25vw;
+    margin: 0 auto;
+    position: relative;
 }

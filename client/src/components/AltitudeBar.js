@@ -8,17 +8,6 @@ export default class AltitudeBar extends React.Component {
     static propTypes = {
         alt: PropTypes.number,
     };
-    // Style for moving the bar in the meter by altitude value
-    barStyle = {
-        position: 'absolute',
-        backgroundColor: 'black',
-        opacity: "0.8",
-        width: '150%',
-        height: '3%',
-        left: '-25%',
-        // Get precentage to move up the meter while accounting for bar height
-        bottom: ((this.props.alt / 30) - 1.5) + '%',
-    }
 
     render() {
         return (
@@ -28,11 +17,12 @@ export default class AltitudeBar extends React.Component {
                     <div className="Spacer-Middle">2000</div>
                     <div className="Spacer-Middle">1000</div>
                     <div className="Spacer-Bottom">0</div>
-                    <div style={this.barStyle}></div>
+                    <div className="Bar" style={{
+                        // Style for moving the bar in the meter by altitude value
+                        bottom: ((this.props.alt / 30) - 1.5) + '%',
+                    }}></div>
                 </div>
             </div>
         );
     }
 }
-
-//export default AltitudeBar;

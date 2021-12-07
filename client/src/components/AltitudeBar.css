@@ -1,5 +1,5 @@
 .Meter-Container {
-    width: 15vw;
+    width: 20vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,21 +13,28 @@
     border-width: 0.25vw;
     text-align: center;
     font-size: 2vw;
+    font-weight: bold;
     user-select: none;
     padding: 0vw 0.5vw;
 }
 
 .Spacer-Top {
-    font-weight: bold;
     padding-bottom: 50%;
 }
 
 .Spacer-Middle {
-    font-weight: bold;
     padding: 50% 0%;
 }
 
 .Spacer-Bottom {
-    font-weight: bold;
     padding-top: 50%;
+}
+
+.Bar {
+    position: absolute;
+    background-color: black;
+    opacity: 0.8;
+    width: 150%;
+    height: 3%;
+    left: -25%;
 }

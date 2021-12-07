@@ -1,20 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './TextView.css';
 
-class TextView extends React.Component {
+export default class TextView extends React.Component {
     static propTypes = {
         dials: PropTypes.object,
     };
 
     render() {
         return (
-            <div>
-                <div>Altitude: {this.props.dials.alt}</div>
-                <div>HIS: {this.props.dials.his}</div>
-                <div>ADI: {this.props.dials.adi}</div>
+            <div className="Text-Container">
+                <span>Altitude: {this.props.dials.alt}</span>
+                <span>HIS: {this.props.dials.his}</span>
+                <span>ADI: {this.props.dials.adi}</span>
             </div>
         );
     }
 }
-
-export default TextView;
